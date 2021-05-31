@@ -1,0 +1,539 @@
+header{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    display: block;
+    
+   
+  
+     
+     .phone-icon{
+         align-items: center;
+         text-align: center;
+         width: 100%;
+         margin-top: 20px;
+   
+         z-index: 1;
+         color: #fff;
+         
+         span{
+             display: inline-block;
+             margin-right: 12px;
+             font-weight: 700;
+         }
+         i.fa-search{
+             border-left: 1px dotted #fff;
+             padding-left: 15px;
+         }
+         i.fa-phone-volume{
+             padding-right: 10px;
+         }
+     }
+     
+ 
+ 
+     .navbar{
+         padding: 0;
+         z-index: 1;
+         width: 100%;
+         
+        a.navbar-brand img{
+          width: 200px; 
+          @include lg {
+             width: 160px;
+           }
+           @include md {
+             width: 140px;
+             
+           }
+           @include sm {
+             width: 120px;
+           }
+           @include xs {
+             width: 120px;
+           }
+ 
+     
+         }
+         button.navbar-toggler{
+             outline: none;
+             border: none;
+              i.fa-bars{
+                 color:$dark_color;
+             
+             }
+             
+            
+         }
+         
+         .navbar-collapse{
+             @include md{
+                 background-color: #000;
+                 z-index: 10;
+                 margin-top: 10px;
+ 
+             }
+           
+             
+             .navbar-nav{
+ 
+                 @include md{
+                     text-align: center;
+                     
+                   }
+ 
+                 
+                 li.nav-item{
+                     font-weight: 500;
+                 }
+                 .item__drop{
+                     position: relative;
+                     
+                     .drop-content{
+                         width:160px;
+                         height: 40px;
+                         line-height: 40px;
+                         text-align: left;
+                         padding-left: 30px;
+                         font-size: 14px;
+                         position: absolute;
+                         top:99%;
+                         background:linear-gradient(to right, $light_color, $dark_color);
+                         opacity: 0;
+                         transform: scale(1);
+                         transition: all 0.5s;
+                        
+                         color:#fff;
+                         @include md{
+                             opacity: 1;
+                             position: static;
+                             width: 100%;
+                             text-align: center;
+                         }
+                         
+                         
+                     }
+                 }
+                 .item__drop:hover > .drop-content{
+                     opacity: 1;
+                     transform: scale(1.1);
+                    
+                 }
+                 li.nav-item.active{
+ 
+                     font-size: 16px;
+                 }
+                 li.nav-item{
+                     font-size: 1rem;
+                     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                     @include md{
+                       border-bottom: unset;
+                     }
+                     a.nav-link{
+                        position: relative;
+                      
+                        letter-spacing: 2px;
+                        padding: 20px 24px;
+                        white-space: nowrap;
+                        color: #fff;
+                        font-size: 1rem;
+                        @include lg {
+                            font-size: 0.9em;
+                            padding: 20px 14px;
+                            letter-spacing: 2px;
+                          }
+                          @include md {
+                            font-size: 0.7em;
+                          }
+                          @include sm {
+                            font-size: 0.7em;
+                          }
+                          @include xs {
+                            font-size: 0.7em;
+                          }
+ 
+ 
+                     }
+ 
+                 
+         
+                     a::after{
+                         content: "";
+                         display: block;
+                         height: 2px;
+                         width: 0;
+                         position: absolute;
+                         bottom: 0;
+                         left: 0;
+                         background:linear-gradient(to right, $light_color, $dark_color);
+                         @include transition(width 0.5s);
+                         will-change:with;
+                          
+                     }
+         
+                 }
+                 
+                 .nav-item.active a::after{
+                     width: 100%;
+                     @include md{
+                         width: 0;
+                     }
+                     
+                 }
+                 .nav-item.active:hover a::after{
+                     box-shadow: 0 0 20px 0 $light_color;
+         
+                 }
+                 .nav-item:hover a::after{
+                     width: 100%;
+                     box-shadow: 0 0 20px 0 $light_color;
+                     
+                 }
+             }
+     
+     
+         }
+     }
+     #scroll__header{
+         background-color: #333;
+         opacity: 1;
+         position: fixed;
+         z-index: 10;
+         width: 100%;
+         transition:all 0.5s ;
+         .navbar{
+             padding: 0;
+             z-index: 1;
+             width: 100%;
+             
+            a.navbar-brand img{
+              width: 200px; 
+              @include lg {
+                 width: 160px;
+               }
+               @include md {
+                 width: 140px;
+                 
+               }
+               @include sm {
+                 width: 120px;
+               }
+               @include xs {
+                 width: 120px;
+               }
+     
+         
+             }
+             button.navbar-toggler{
+                 &>a{
+                     color:$dark_color;
+                 }
+                 
+                
+             }
+             
+             .navbar-collapse{
+                 @include md{
+                     background-color: #000;
+                     z-index: 10;
+                     margin-top: 10px;
+     
+                 }
+               
+                
+                 .navbar-nav{
+                     @include md {
+                       text-align: center;
+                         
+                     }
+                     
+                     li.nav-item{
+                         font-weight: 500;
+                        
+                         
+                     }
+                     .item__drop{
+                         position: relative;
+                         
+                         .drop-content{
+                             width:160px;
+                             height: 40px;
+                             line-height: 40px;
+                             text-align: left;
+                             padding-left: 30px;
+                             font-size: 14px;
+                             position: absolute;
+                             top:99%;
+                             background:linear-gradient(to right, $light_color, $dark_color);
+                             opacity: 0;
+                             transform: scale(1);
+                             transition: all 0.5s;
+                            
+                             color:#fff;
+                             @include md{
+                                 opacity: 1;
+                                 position: static;
+                                 width: 100%;
+                                 text-align: center;
+                             }
+                             
+                             
+                         }
+                     }
+                     .item__drop:hover > .drop-content{
+                         opacity: 1;
+                         transform: scale(1.1);
+                        
+                     }
+                     li.nav-item.active{
+     
+                         font-size: 16px;
+                     }
+                     li.nav-item{
+                         font-size: 1rem;
+                         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                         @include md{
+                           border-bottom: unset;
+                         }
+                         a.nav-link{
+                            position: relative;
+                          
+                            letter-spacing: 2px;
+                            padding: 20px 24px;
+                            white-space: nowrap;
+                            color: #fff;
+                            font-size: 1rem;
+                            @include lg {
+                                font-size: 0.9em;
+                                padding: 20px 14px;
+                                letter-spacing: 2px;
+                              }
+                              @include md {
+                                font-size: 0.7em;
+                              }
+                              @include sm {
+                                font-size: 0.7em;
+                              }
+                              @include xs {
+                                font-size: 0.7em;
+                              }
+     
+     
+                         }
+     
+                     
+             
+                         a::after{
+                             content: "";
+                             display: block;
+                             height: 2px;
+                             width: 0;
+                             position: absolute;
+                             bottom: 0;
+                             left: 0;
+                             background:linear-gradient(to right, $light_color, $dark_color);
+                             @include transition(width 0.5s);
+                             will-change:with;
+                              
+                         }
+             
+                     }
+                     
+                     .nav-item.active a::after{
+                         width: 100%;
+                         @include md{
+                             width: 0;
+                         }
+                         
+                     }
+                     .nav-item.active:hover a::after{
+                         box-shadow: 0 0 20px 0 $light_color;
+             
+                     }
+                     .nav-item:hover a::after{
+                         width: 100%;
+                         box-shadow: 0 0 20px 0 $light_color;
+                         
+                     }
+                 }
+         
+         
+             }
+         }
+     }
+ }
+ header.container{
+     @include md {
+         max-width: 600px;
+       }
+ }
+
+//  srcoll
+#scroll__header{
+    background-color: #000;
+    // opacity: 0;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    transform: translateY(-70px);
+   
+    transition: all 0.5s;
+    .navbar{
+        padding: 0;
+        z-index: 1;
+        width: 100%;
+        
+        
+       a.navbar-brand img{
+         width: 200px; 
+         @include lg {
+            width: 160px;
+          }
+          @include md {
+            width: 140px;
+            
+          }
+          @include sm {
+            width: 120px;
+          }
+          @include xs {
+            width: 120px;
+          }
+
+    
+        }
+        button.navbar-toggler{
+            
+            outline: none;
+            border: none;
+            i.fa-bars{
+                color: $dark_color;
+                
+            }
+
+        }
+        
+        .navbar-collapse{
+            @include md{
+                background-color: #000;
+                z-index: 10;
+                margin-top: 10px;
+
+            }
+          
+            
+            .navbar-nav{
+                text-align: center;
+                
+                li.nav-item{
+                    font-weight: 500;
+                }
+                .item__drop{
+                    position: relative;
+                    
+                    .drop-content{
+                        width:160px;
+                        height: 40px;
+                        line-height: 40px;
+                        text-align: left;
+                        padding-left: 30px;
+                        font-size: 14px;
+                        position: absolute;
+                        top:99%;
+                        background:linear-gradient(to right, $light_color, $dark_color);
+                        opacity: 0;
+                        transform: scale(1);
+                        transition: all 0.5s;
+                       
+                        color:#fff;
+                        @include md{
+                            opacity: 1;
+                            position: static;
+                            width: 100%;
+                            text-align: center;
+                        }
+                        
+                        
+                    }
+                }
+                .item__drop:hover > .drop-content{
+                    opacity: 1;
+                    transform: scale(1.1);
+                   
+                }
+                li.nav-item.active{
+
+                    font-size: 16px;
+                }
+                li.nav-item{
+                    font-size: 1rem;
+                    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                    @include md{
+                      border-bottom: unset;
+                    }
+                    a.nav-link{
+                       position: relative;
+                     
+                       letter-spacing: 2px;
+                       padding: 20px 24px;
+                       white-space: nowrap;
+                       color: #fff;
+                       font-size: 1rem;
+                       @include lg {
+                           font-size: 0.9em;
+                           padding: 20px 14px;
+                           letter-spacing: 2px;
+                         }
+                         @include md {
+                           font-size: 0.7em;
+                         }
+                         @include sm {
+                           font-size: 0.7em;
+                         }
+                         @include xs {
+                           font-size: 0.7em;
+                         }
+
+
+                    }
+
+                
+        
+                    a::after{
+                        content: "";
+                        display: block;
+                        height: 2px;
+                        width: 0;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        background:linear-gradient(to right, $light_color, $dark_color);
+                        @include transition(width 0.5s);
+                        will-change:with;
+                         
+                    }
+        
+                }
+                
+                .nav-item.active a::after{
+                    width: 100%;
+                    @include md{
+                        width: 0;
+                    }
+                    
+                }
+                .nav-item.active:hover a::after{
+                    box-shadow: 0 0 20px 0 $light_color;
+        
+                }
+                .nav-item:hover a::after{
+                    width: 100%;
+                    box-shadow: 0 0 20px 0 $light_color;
+                    
+                }
+            }
+    
+    
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.movie__slick img{
+    display: block;
+    width: 100%;
+    border-radius: 15px;
+
+   
+    
+
+}
+section.movie{
+    background-color: #101010;
+    position: relative;
+    .movie__slick{
+        padding: 40px 0;
+        .movie__item{
+            padding: 0 10px;
+           
+            overflow: hidden;
+            .item__picture{
+                background-color: #101010;
+                position: relative;
+             
+                .picture__title{
+                    @include flex-element;
+                    flex-direction: column;
+                    justify-content: center;
+                    margin-top: 25px;
+                    background-color: #101010;
+
+                    h2{
+                        color: #fff;
+                        font-size: 14px;
+                    }
+                    span{
+                        color: #d8d8d8;
+                        font-size: 14px;
+                    }
+
+                    
+                   
+                }
+                .movie__overlay{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    background-color:rgba(16, 16, 16, .6);
+                    opacity: 1;
+                }
+                &:hover .movie__overlay{
+                    opacity: 0;
+                }
+
+               
+                
+               
+
+
+            }
+            
+            
+            
+            
+           
+           
+
+        }
+        
+       
+        
+        
+    }
+    .arrows-next{
+        position: absolute;
+        top: 32%;
+         right: 6%;
+        font-size: 30px;
+        color: $dark_color;
+        transform: translateX(0);
+        transition: all 0.5s;
+        opacity: 1;
+        will-change: opacity, transform;
+
+    }
+    .arrows-next:hover{
+        transform: translateX(15px);
+        opacity: 0.5;
+    }
+    .arrows-prev{
+        position: absolute;
+        top: 32%;
+        left: 6%;
+        font-size: 30px;
+        color: $dark_color;
+        transform: translateX(0);
+        transition: all 0.5s;
+        opacity: 1;
+        will-change: opacity, transform;
+
+    }
+    .arrows-prev:hover{
+        transform: translateX(-15px);
+        opacity: 0.5;
+    }
+
+
+}
